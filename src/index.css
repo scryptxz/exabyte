@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Cores da marca Exabyte (extraídas da logo) */
+@theme {
+  --color-marca: #1a73e8;        /* azul principal */
+  --color-marca-claro: #29b6f6;  /* azul-água da logo */
+  --color-marca-escuro: #0b1a4a; /* azul-marinho do texto "Exabyte" */
+  --color-painel: #1f1f1f;       /* fundo escuro do cabeçalho e dos filtros */
+  --color-preco: #16a34a;        /* verde dos preços */
+}
+
+body {
+  background-color: #efefef;
+  color: #27272a;
+  font-family: "Roboto", "Segoe UI", system-ui, sans-serif;
+}
+
+/* Classes reutilizáveis dos formulários e botões (Tailwind v4: @utility) */
+@utility campo {
+  @apply w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm text-zinc-800 placeholder-zinc-400 outline-none focus:border-marca focus:ring-2 focus:ring-marca/20;
+}
+@utility rotulo {
+  @apply mb-1 block text-xs font-bold tracking-wide text-zinc-600 uppercase;
+}
+@utility btn {
+  @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-bold uppercase transition disabled:cursor-not-allowed disabled:opacity-40;
+}
+@utility btn-primario {
+  @apply btn bg-marca text-white shadow-sm hover:brightness-110;
+}
+@utility btn-secundario {
+  @apply btn border border-zinc-300 bg-white text-zinc-700 hover:border-marca hover:text-marca;
+}
+@utility btn-perigo {
+  @apply btn border border-red-200 bg-white text-red-600 hover:bg-red-50;
+}
+@utility cartao {
+  @apply rounded-xl border border-zinc-200 bg-white shadow-sm;
+}
