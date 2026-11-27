@@ -24,7 +24,11 @@ export default function Pedidos() {
 
   const carregar = useCallback(() => {
     const query = filtroCliente ? `?cliente=${filtroCliente}` : ''
-    api(`/api/pedidos${query}`).then(setPedidos).catch((e) => setErro(e.message))
+    // A API devolve cada pedido detalhado ({ pedido, cliente, endereco, itens });
+    // a lista só precisa do objeto "pedido".
+    api(`/api/pedidos${query}`)
+      .then((lista) => setPedidos(lista.map((d) => d.pedido ?? d)))
+      .catch((e) => setErro(e.message))
   }, [filtroCliente])
 
   useEffect(() => {
