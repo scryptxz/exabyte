@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
 /* Cores da marca Exabyte (extraídas da logo) */
@@ -12,7 +13,7 @@
 body {
   background-color: #efefef;
   color: #27272a;
-  font-family: "Roboto", "Segoe UI", system-ui, sans-serif;
+  font-family: "Outfit", serif;
 }
 
 /* Classes reutilizáveis dos formulários e botões (Tailwind v4: @utility) */
